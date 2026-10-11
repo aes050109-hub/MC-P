@@ -1,0 +1,19 @@
+在 VS Code 中直接运行（无需 Node.js、无需插件）
+
+适用电脑：macOS
+
+1. 解压 ZIP 文件。
+2. 打开 VS Code，选择 File > Open Folder。
+3. 只选择并打开 online-gp-clinic 文件夹，不要只打开 index.html。
+4. 在 VS Code 菜单选择 Terminal > Run Build Task。
+5. 或直接按 Command + Shift + B。
+6. 如果 VS Code 询问任务，请选择 Run Online GP Website (No Node)。
+7. 浏览器会自动打开 http://localhost:5500/，网址不会显示 Downloads 路径。
+
+网站运行时不要关闭 VS Code 下方的 Terminal。
+停止网站：点击终端垃圾桶按钮，或者在该终端按 Control + C。
+
+如果提示端口被占用，先关闭之前仍在运行的网站终端，然后重新按 Command + Shift + B。
+
+注意：不要点击 index.html 右上角的 Run Code。HTML 不是可以直接执行的程序；
+本项目已经使用 VS Code 自带的 Run Build Task 功能代替它。
