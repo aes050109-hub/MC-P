@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Certificates - V1 | Online GP Clinic</title>
+</head>
+<body>
+  <header>
+    <h2>Online GP Clinic</h2>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a> |
+      <a href="v1-prescriptions.html">Prescriptions</a> |
+      <a href="v1-medical-certificates.html" aria-current="page">Medical Certificates</a>
+    </nav>
+    <p><small>For emergencies in New Zealand, call 111. This website is a course prototype.</small></p>
+  </header>
+  <hr>
+  <main>
+    <h1>Medical Certificates</h1>
+    <p>Request a medical certificate for an absence from work or study following an appropriate GP assessment.</p>
+    <p>Providing requested dates does not guarantee that a certificate will be issued or that those dates will be approved.</p>
+
+    <h2>How medical certificates work</h2>
+    <ol>
+      <li>Choose whether you need a certificate for work or study.</li>
+      <li>Enter the dates you would like the clinician to consider.</li>
+      <li>Identify a related completed consultation, or arrange one if needed.</li>
+      <li>Review the request before submitting it for GP assessment.</li>
+      <li>If approved and issued, the document may be made available through your patient account.</li>
+    </ol>
+    <p><strong>Important:</strong> Only a clinician can decide whether a medical certificate is appropriate and what period it covers.</p>
+
+    <h2>Request a certificate</h2>
+    <form id="certificate-form">
+      <p>
+        <label for="purpose">Purpose (required)</label><br>
+        <select id="purpose" name="purpose" required>
+          <option value="">Select a purpose</option>
+          <option value="work">Work absence</option>
+          <option value="study">Study absence</option>
+        </select>
+      </p>
+      <p>
+        <label for="start-date">Requested start date (required)</label><br>
+        <input id="start-date" name="start-date" type="date" required>
+      </p>
+      <p>
+        <label for="end-date">Requested end date (required)</label><br>
+        <input id="end-date" name="end-date" type="date" required>
+      </p>
+      <p>
+        <label for="consultation">Related consultation (required)</label><br>
+        <select id="consultation" name="consultation" required>
+          <option value="">Choose one</option>
+          <option value="completed">Sample completed consultation</option>
+          <option value="needed">I need a consultation</option>
+        </select>
+      </p>
+      <p><small>This is a demonstration. Do not enter any real medical information.</small></p>
+      <p>
+        <button type="button" onclick="history.back()">Back</button>
+        <button type="submit">Submit request</button>
+      </p>
+    </form>
+
+    <h2>Important information</h2>
+    <ul>
+      <li>Medical certificates are not automatically generated when a form is submitted.</li>
+      <li>The GP may need a consultation or additional information to make an assessment.</li>
+      <li>Dates entered here are a request, not certified dates.</li>
+      <li>Any fee must be explained before a real payment or submission is confirmed.</li>
+      <li>This V1 demonstration creates no certificate and stores no medical details.</li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Can I request a certificate for university?</h3>
+    <p>Yes. The proposed request flow includes study absence, subject to GP assessment.</p>
+    <h3>Can I request dates in the past?</h3>
+    <p>You may explain your requested period to the clinician, but only the clinician can decide whether certification is appropriate.</p>
+    <h3>Will I receive a certificate immediately?</h3>
+    <p>No. The request must be assessed, and issuing a certificate is not guaranteed.</p>
+    <h3>What if I have not had a consultation?</h3>
+    <p>The proposed website should direct you to book a GP consultation before continuing, where required.</p>
+  </main>
+  <hr>
+  <footer>
+    <p><a href="v1-prescriptions.html">Prescriptions</a> | <a href="v1-medical-certificates.html">Medical Certificates</a></p>
+    <small>Online GP Clinic | Reconstructed V1 plain HTML concept for coursework. No live health service.</small>
+  </footer>
+  <script>
+    document.getElementById('certificate-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const start = document.getElementById('start-date').value;
+      const end = document.getElementById('end-date').value;
+      if (end < start) {
+        alert('End date must be on or after start date.');
+      } else if (document.getElementById('consultation').value === 'needed') {
+        alert('V1 prototype: Please arrange a GP consultation. No request was sent.');
+      } else {
+        alert('V1 prototype only: The request would go to GP review. No certificate was issued.');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prescriptions - V1 | Online GP Clinic</title>
+</head>
+<body>
+  <header>
+    <h2>Online GP Clinic</h2>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a> |
+      <a href="v1-prescriptions.html" aria-current="page">Prescriptions</a> |
+      <a href="v1-medical-certificates.html">Medical Certificates</a>
+    </nav>
+    <p><small>For emergencies in New Zealand, call 111. This website is a course prototype.</small></p>
+  </header>
+  <hr>
+  <main>
+    <h1>Prescriptions</h1>
+    <p>Manage your repeat prescription requests online without needing to phone the clinic for every routine enquiry.</p>
+    <p>This service is for patients requesting a repeat of a medicine already recorded in their clinic profile. Every request needs assessment by a GP.</p>
+
+    <h2>How prescriptions work</h2>
+    <ol>
+      <li>Check that your medicine is already in your patient record.</li>
+      <li>Select the medicine and your preferred collection pharmacy.</li>
+      <li>Review your request and submit it for GP assessment.</li>
+      <li>Check the request status in your patient account. An approved electronic prescription may be sent to the selected pharmacy.</li>
+    </ol>
+    <p><strong>Important:</strong> A submitted request is not an approved prescription. A clinician may need to speak with you or arrange an appointment.</p>
+
+    <h2>Request a repeat</h2>
+    <form id="repeat-form">
+      <p>
+        <label for="medicine">Medicine already on your record (required)</label><br>
+        <select id="medicine" name="medicine" required>
+          <option value="">Select your medicine</option>
+          <option value="a">Example medicine A</option>
+          <option value="b">Example medicine B</option>
+        </select>
+      </p>
+      <p>
+        <label for="pharmacy">Preferred pharmacy (required)</label><br>
+        <select id="pharmacy" name="pharmacy" required>
+          <option value="">Select your pharmacy</option>
+          <option value="central">Sample Central Pharmacy</option>
+          <option value="north">Sample North Pharmacy</option>
+        </select>
+      </p>
+      <p>
+        <label for="change">Has anything changed since your last prescription? (required)</label><br>
+        <select id="change" name="change" required>
+          <option value="">Choose one</option>
+          <option value="no">No change to discuss</option>
+          <option value="yes">Yes, I need to discuss a change</option>
+        </select>
+      </p>
+      <p><small>Only example medicines and pharmacies are shown. Do not enter real health details in this prototype.</small></p>
+      <p>
+        <button type="button" onclick="history.back()">Back</button>
+        <button type="submit">Submit request</button>
+      </p>
+    </form>
+
+    <h2>Important information</h2>
+    <ul>
+      <li>Repeat prescriptions are issued only when the GP considers them clinically appropriate.</li>
+      <li>If your medicine, symptoms or dose has changed, a consultation may be required.</li>
+      <li>Any service fee should be clearly displayed before a real payment or submission is confirmed.</li>
+      <li>Information may need to be shared securely with your selected pharmacy for prescription fulfilment.</li>
+      <li>This V1 demonstration stores no request and makes no payment.</li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Can I request a new medicine here?</h3>
+    <p>No. This form illustrates requests for medicines already in a patient's record. New medicines require clinical assessment.</p>
+    <h3>Will my medicine be ready immediately?</h3>
+    <p>Not necessarily. Submission starts a review; the GP decides whether to issue a prescription.</p>
+    <h3>Can I choose the pharmacy?</h3>
+    <p>Yes. The proposed service allows patients to select a preferred pharmacy before submitting the request.</p>
+    <h3>What if I need help?</h3>
+    <p>Use the clinic's contact or appointment service in the full group website. In an emergency, call 111.</p>
+  </main>
+  <hr>
+  <footer>
+    <p><a href="v1-prescriptions.html">Prescriptions</a> | <a href="v1-medical-certificates.html">Medical Certificates</a></p>
+    <small>Online GP Clinic | Reconstructed V1 plain HTML concept for coursework. No live health service.</small>
+  </footer>
+  <script>
+    document.getElementById('repeat-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (document.getElementById('change').value === 'yes') {
+        alert('V1 prototype: Please arrange a GP consultation to discuss a change. No request was sent.');
+      } else {
+        alert('V1 prototype only: The request would go to GP review. No request was sent.');
+      }
+    });
+  </script>
+</body>
+</html>
