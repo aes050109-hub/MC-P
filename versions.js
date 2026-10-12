@@ -9,7 +9,7 @@ function draw() {
   const preview = document.getElementById('preview');
   if (version === '2' || version === 'mobile') {
     preview.innerHTML = `<p>Current working page. Use fictional information.</p>
-      <iframe title="${title} prototype" src="../${prefix}-request.html"
+      <iframe title="${title} prototype" src="${prefix}-request.html"
         class="frame-demo" style="${version === '2' ? 'width:100%;height:1080px' : ''}"></iframe>`;
     return;
   }
